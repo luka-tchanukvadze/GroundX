@@ -1,8 +1,51 @@
-import Hero from "@/components/Hero";
+import CarCard from "@/components/rent-a-car/CarCard";
+import CustomFilter from "@/components/rent-a-car/CustomFilter";
+import Hero from "@/components/rent-a-car/Hero";
+import SearchBar from "@/components/rent-a-car/SearchBar";
+import { fetchCars } from "@/utils";
+import { Arya } from "next/font/google";
 import React from "react";
 
-function RentCar() {
-  return <Hero />;
+async function RentCar() {
+  const allCars = await fetchCars();
+
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+
+  return (
+    <main style={{ height: "150rem" }} className="overflow-hidden">
+      <Hero />
+      <div className="mt-12 px-10 py-10" id="discover">
+        <div className="flex flex-col items-start justify-start gap-y-2.5 text-black-100">
+          <h1 className="text-4xl font-extrabold">Car CAtalogue</h1>
+          <p>Explore the cars you might like</p>
+        </div>
+
+        <div className="flex mt-12 w-full justify-between items-center flex-wrap gap-5">
+          <SearchBar />
+
+          <div className="flex justify-start flex-wrap items-center gap-2">
+            <CustomFilter title="fuel" />
+            <CustomFilter title="Year" />
+          </div>
+        </div>
+
+        {!isDataEmpty ? (
+          <section>
+            <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
+              {allCars?.map((car) => (
+                <CarCard car={car} />
+              ))}
+            </div>
+          </section>
+        ) : (
+          <div className="mt-16 flex justify-center items-center flex-col gap-2">
+            <h2 className="text-black text-xl font-bold">oops, no results</h2>
+            <p>{allCars?.message}</p>
+          </div>
+        )}
+      </div>
+    </main>
+  );
 }
 
 export default RentCar;
