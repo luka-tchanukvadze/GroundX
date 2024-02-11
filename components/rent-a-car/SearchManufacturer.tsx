@@ -18,20 +18,16 @@ const SearchManufacturer = ({
       ? manufacturers
       : manufacturers.filter((item) =>
           item
-            .toLocaleLowerCase()
+            .toLowerCase()
             .replace(/\s+/g, "")
             .includes(query.toLowerCase().replace(/\s+/g, ""))
         );
 
   return (
     <div className="flex-1 max-sm:w-full flex justify-start items-center">
-      <Combobox>
+      <Combobox value={manufacturer} onChange={setManuFacturer}>
         <div className="relative w-full">
-          <Combobox.Button
-            value={manufacturer}
-            onChange={setManuFacturer}
-            className="absolute top-[14px]"
-          >
+          <Combobox.Button className="absolute top-[14px]">
             <Image
               src="/car-logo.svg"
               width={20}
@@ -43,8 +39,9 @@ const SearchManufacturer = ({
 
           <Combobox.Input
             className="border-2 w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm"
-            placeholder="Volkswagen"
-            displayValue={(manufacturer: string) => manufacturer}
+            placeholder="Volkswagen..."
+            displayValue={(item: string) => item}
+            // displayValue={(manufacturer: string) => manufacturer}
             onChange={(e) => setQuery(e.target.value)}
           />
 

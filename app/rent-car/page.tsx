@@ -1,21 +1,27 @@
+"use client ";
+
 import CarCard from "@/components/rent-a-car/CarCard";
 import CustomFilter from "@/components/rent-a-car/CustomFilter";
 import Hero from "@/components/rent-a-car/Hero";
 import SearchBar from "@/components/rent-a-car/SearchBar";
+import ShowMore from "@/components/rent-a-car/ShowMore";
+import { fuels, yearsOfProduction } from "@/constants";
+import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
 import { Arya } from "next/font/google";
 import React from "react";
 
-async function RentCar({ searchParams }) {
-  const allCars = await fetchCars({
-    manufacturer: searchParams.manufacturer,
-    year: searchParams.year || 2022,
-    fuel: searchParams.fule || "",
-    limit: searchParams.limit || 10,
-    model: searchParams.model || "",
-  });
+// async function RentCar({ searchParams }: HomeProps) {
+async function RentCar() {
+  // const allCars = await fetchCars({
+  //   manufacturer: searchParams.manufacturer,
+  //   year: searchParams.year || 2022,
+  //   fuel: searchParams.fuel || "",
+  //   limit: searchParams.limit || 10,
+  //   model: searchParams.model || "",
+  // });
 
-  // userouter gvaqvs searchbar-shi
+  const [allCars, setAllCars];
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
@@ -32,8 +38,8 @@ async function RentCar({ searchParams }) {
           <SearchBar />
 
           <div className="flex justify-start flex-wrap items-center gap-2">
-            <CustomFilter title="fuel" />
-            <CustomFilter title="Year" />
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
 
@@ -44,6 +50,11 @@ async function RentCar({ searchParams }) {
                 <CarCard car={car} />
               ))}
             </div>
+
+            <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > allCars.length}
+            />
           </section>
         ) : (
           <div className="mt-16 flex justify-center items-center flex-col gap-2">
