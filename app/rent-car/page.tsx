@@ -6,13 +6,21 @@ import { fetchCars } from "@/utils";
 import { Arya } from "next/font/google";
 import React from "react";
 
-async function RentCar() {
-  const allCars = await fetchCars();
+async function RentCar({ searchParams }) {
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer,
+    year: searchParams.year || 2022,
+    fuel: searchParams.fule || "",
+    limit: searchParams.limit || 10,
+    model: searchParams.model || "",
+  });
+
+  // userouter gvaqvs searchbar-shi
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   return (
-    <main style={{ height: "150rem" }} className="overflow-hidden">
+    <main style={{ height: "200rem" }} className="overflow-hidden">
       <Hero />
       <div className="mt-12 px-10 py-10" id="discover">
         <div className="flex flex-col items-start justify-start gap-y-2.5 text-black-100">
