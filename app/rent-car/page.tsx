@@ -1,5 +1,3 @@
-"use client ";
-
 import CarCard from "@/components/rent-a-car/CarCard";
 import CustomFilter from "@/components/rent-a-car/CustomFilter";
 import Hero from "@/components/rent-a-car/Hero";
@@ -11,27 +9,25 @@ import { fetchCars } from "@/utils";
 import { Arya } from "next/font/google";
 import React from "react";
 
-// async function RentCar({ searchParams }: HomeProps) {
-async function RentCar() {
-  // const allCars = await fetchCars({
-  //   manufacturer: searchParams.manufacturer,
-  //   year: searchParams.year || 2022,
-  //   fuel: searchParams.fuel || "",
-  //   limit: searchParams.limit || 10,
-  //   model: searchParams.model || "",
-  // });
-
-  const [allCars, setAllCars];
+async function RentCar({ searchParams }: HomeProps) {
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || "",
+    limit: searchParams.limit || 10,
+    model: searchParams.model || "",
+  });
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   return (
-    <main style={{ height: "200rem" }} className="overflow-hidden">
+    <main style={{ height: "100%" }} className="overflow-hidden">
       <Hero />
+
       <div className="mt-12 px-10 py-10" id="discover">
         <div className="flex flex-col items-start justify-start gap-y-2.5 text-black-100">
-          <h1 className="text-4xl font-extrabold">Car CAtalogue</h1>
-          <p>Explore the cars you might like</p>
+          <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
+          <p>Explore out cars you might like</p>
         </div>
 
         <div className="flex mt-12 w-full justify-between items-center flex-wrap gap-5">
@@ -58,7 +54,7 @@ async function RentCar() {
           </section>
         ) : (
           <div className="mt-16 flex justify-center items-center flex-col gap-2">
-            <h2 className="text-black text-xl font-bold">oops, no results</h2>
+            <h2 className="text-black text-xl font-bold">Oops, no results</h2>
             <p>{allCars?.message}</p>
           </div>
         )}
