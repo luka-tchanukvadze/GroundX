@@ -57,3 +57,12 @@ export interface ShowMoreProps{
 export interface HomeProps {
   searchParams: FilterProps;
 }
+
+export interface VansProps {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  imageUrl: string;
+  type: string;
+}

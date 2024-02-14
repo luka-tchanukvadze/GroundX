@@ -2,6 +2,7 @@ import React from "react";
 import AutocompleteAddress from "./AutocompleteAddress";
 import Cars from "./Cars";
 import Cards from "./Cards";
+import { MapboxMap } from "react-map-gl";
 
 function Booking() {
   // const screenHeight = window.innerHeight
@@ -9,7 +10,7 @@ function Booking() {
   return (
     <div className="p-5">
       <h2 className="text-[20px] font-semibold">Booking</h2>
-      <div className="border-2 p-5 rounded-md h-screen">
+      <div className="border-2 p-5 rounded-md ">
         <AutocompleteAddress />
         <Cars />
         <Cards />
