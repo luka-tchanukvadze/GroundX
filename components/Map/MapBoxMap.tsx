@@ -65,7 +65,7 @@ function MapBoxMap() {
         destinationCordinates.lat +
         "?overview=full&geometries=geojson" +
         "&access_token=" +
-        "pk.eyJ1IjoiY2hhbnV1dSIsImEiOiJjbHM0bnhxbmUwNWxyMnJueHNpMTEwaTRqIn0.t_YdoKqbRqPIB8blODTPPA",
+        process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN,
       {
         headers: {
           "Content-Type": "application/json",
@@ -87,9 +87,7 @@ function MapBoxMap() {
         {userLocation ? (
           <Map
             ref={mapRef}
-            mapboxAccessToken={
-              "pk.eyJ1IjoiY2hhbnV1dSIsImEiOiJjbHM0bnhxbmUwNWxyMnJueHNpMTEwaTRqIn0.t_YdoKqbRqPIB8blODTPPA"
-            }
+            mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
             initialViewState={{
               longitude: userLocation?.lng,
               latitude: userLocation?.lat,

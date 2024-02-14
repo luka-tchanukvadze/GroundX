@@ -11,7 +11,7 @@ export async function GET(request: any) {
       searchText +
       "?language=en&limit=6&session_token=65be1bbd501910ec3407160b" +
       "&access_token=" +
-      "pk.eyJ1IjoiY2hhbnV1dSIsImEiOiJjbHM0bnhxbmUwNWxyMnJueHNpMTEwaTRqIn0.t_YdoKqbRqPIB8blODTPPA",
+      process.env.MAPBOX_ACCESS_TOKEN,
     {
       headers: {
         "Content-Type": "application/json",

@@ -51,7 +51,7 @@ function AutocompleteAddress() {
         "?session_token=" +
         session_token +
         "&access_token=" +
-        "pk.eyJ1IjoiY2hhbnV1dSIsImEiOiJjbHM0bnhxbmUwNWxyMnJueHNpMTEwaTRqIn0.t_YdoKqbRqPIB8blODTPPA"
+        process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
     );
 
     const result = await res.json();
@@ -73,7 +73,7 @@ function AutocompleteAddress() {
         "?session_token=" +
         session_token +
         "&access_token=" +
-        "pk.eyJ1IjoiY2hhbnV1dSIsImEiOiJjbHM0bnhxbmUwNWxyMnJueHNpMTEwaTRqIn0.t_YdoKqbRqPIB8blODTPPA"
+        process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
     );
 
     const result = await res.json();
