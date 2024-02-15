@@ -62,18 +62,42 @@ const Vans = () => {
     setVanIsOpen(true);
     setSelectedVan(van);
   };
+  console.log(typeFilter);
 
   return (
-    <div className="">
-      <div className="flex gap-2">
-        <button onClick={() => updateSearchParams("simple")}>simple</button>
-        <button onClick={() => updateSearchParams("rugged")}>rugged</button>
-        <button onClick={() => updateSearchParams("luxury")}>luxury</button>
+    <div className="mt-32 2xl:mx-44 xl:mx-32 md:mx-16">
+      <div className="flex gap-2 justify-center">
+        <button
+          className={`py-2 px-4 text-white ${
+            typeFilter == "simple" ? "bg-blue-800 " : "bg-cyan-400 "
+          }`}
+          onClick={() => updateSearchParams("simple")}
+        >
+          simple
+        </button>
+        <button
+          className={`py-2 px-4  text-white ${
+            typeFilter == "rugged" ? "bg-blue-800 " : "bg-cyan-400 "
+          }`}
+          onClick={() => updateSearchParams("rugged")}
+        >
+          rugged
+        </button>
+        <button
+          className={`py-2 px-4 text-white ${
+            typeFilter == "luxury" ? "bg-blue-800 " : "bg-cyan-400 "
+          }`}
+          onClick={() => updateSearchParams("luxury")}
+        >
+          luxury
+        </button>
+
         {typeFilter ? (
           <button onClick={() => updateSearchParams(".")}>Clear filter</button>
         ) : null}
       </div>
-      <div className=" grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14 ">
+      <div className=" grid  xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14 ">
+        {/* <div className=" grid  xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14 "> */}
         {displayVans?.map((van) => (
           <div
             // className="relative flex p-4 bg-blue-200  hover:bg-white hover:shadow-md rounded-3xl group"

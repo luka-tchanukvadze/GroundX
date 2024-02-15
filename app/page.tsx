@@ -8,6 +8,7 @@ import { UserLocationContext } from "@/context/UserLocationContext";
 import { DirectionDataContext } from "@/context/DirectionDataContext";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import ScrollToTop from "@/components/ScrollToTop";
 
 // Visättravägen 71, 141 50 Huddinge Municipality, Sweden
 // Visättra Backe 71, 141 58 Huddinge Municipality, Sweden

@@ -21,7 +21,11 @@ async function RentCar({ searchParams }: HomeProps) {
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   return (
-    <main style={{ height: "100%" }} className="overflow-hidden">
+    // <div className="mt-32 2xl:mx-44 xl:mx-32 md:mx-16"></div>
+    <main
+      style={{ height: "100%" }}
+      className="overflow-hidden  2xl:mx-44 xl:mx-32 md:mx-16"
+    >
       <Hero />
 
       <div className="mt-12 px-10 py-10" id="discover">
@@ -41,7 +45,8 @@ async function RentCar({ searchParams }: HomeProps) {
 
         {!isDataEmpty ? (
           <section>
-            <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
+            <div className=" grid  xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14 ">
+              {/* <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14"> */}
               {allCars?.map((car) => (
                 <CarCard car={car} />
               ))}

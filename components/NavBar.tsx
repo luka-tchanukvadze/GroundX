@@ -12,6 +12,16 @@ function NavBar() {
       <Link href="/">
         <p>LOGO</p>
       </Link>
+
+      {path.startsWith("/rent-car") && (
+        <Link href="/special-offer">Special Offer</Link>
+      )}
+      {path.startsWith("/rent-car") ? null : (
+        <Link href="/rent-car">rent a car</Link>
+      )}
+      {/* <Link href="/rent-car">rent a car</Link> */}
+      <UserButton afterSignOutUrl="/" />
+
       {path === "/" && (
         <div className="hidden md:flex gap-2">
           <h2 className="hover:bg-gray-100 p-2 cursor-pointer transition-all">
@@ -25,14 +35,6 @@ function NavBar() {
           </h2>
         </div>
       )}
-      {path.startsWith("/rent-car") && (
-        <Link href="/special-offer">Special Offer</Link>
-      )}
-      {path.startsWith("/rent-car") ? null : (
-        <Link href="/rent-car">rent a car</Link>
-      )}
-      {/* <Link href="/rent-car">rent a car</Link> */}
-      <UserButton afterSignOutUrl="/" />
     </div>
   );
 }

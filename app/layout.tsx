@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           {children}
           <div className="mt-36">
             <Footer />
+            <ScrollToTop />
           </div>
         </body>
       </html>
