@@ -1,3 +1,4 @@
+import Slider from "@/components/Slider/Slider";
 import CarCard from "@/components/rent-a-car/CarCard";
 import CustomFilter from "@/components/rent-a-car/CustomFilter";
 import Hero from "@/components/rent-a-car/Hero";
@@ -24,9 +25,13 @@ async function RentCar({ searchParams }: HomeProps) {
     // <div className="mt-32 2xl:mx-44 xl:mx-32 md:mx-16"></div>
     <main
       style={{ height: "100%" }}
-      className="overflow-hidden  2xl:mx-44 xl:mx-32 md:mx-16"
+      className="overflow-hidden flex flex-col items-center  2xl:mx-44 xl:mx-32 md:mx-16"
     >
       <Hero />
+
+      <div className="w-[80%] ">
+        <Slider />
+      </div>
 
       <div className="mt-12 px-10 py-10" id="discover">
         <div className="flex flex-col items-start justify-start gap-y-2.5 text-black-100">

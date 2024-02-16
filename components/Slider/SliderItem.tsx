@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
-// imageUrl, isActive
 interface SliderItemProps {
   imageUrl: string;
   isActive: boolean;
@@ -9,7 +9,13 @@ interface SliderItemProps {
 function SliderItem({ imageUrl, isActive }: SliderItemProps) {
   return (
     <div className={`slider-item ${isActive ? "active" : ""}`}>
-      <img src={imageUrl} alt="Slider Item" />
+      <Image
+        className="m-2 object-bottom object-cover"
+        src={imageUrl}
+        width={5000}
+        height={5000}
+        alt="Slider Item"
+      />
     </div>
   );
 }

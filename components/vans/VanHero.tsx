@@ -37,7 +37,6 @@ const VanHero = () => {
           <div className="absolute xl:-top-0 xl:right-0 bg-blue-400 bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden rounded-sm" />
         </div>
       </div> */}
-      <Slider />
     </div>
   );
 };

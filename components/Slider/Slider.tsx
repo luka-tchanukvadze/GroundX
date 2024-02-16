@@ -8,13 +8,7 @@ import SliderItem from "./SliderItem";
 // import SliderItem from "./SliderItem";
 // import SliderControl from "./SliderControl";
 
-const images = [
-  // "/assets/homepage/homepage.png",
-  "/rentcar.png",
-  "/rentcar.png",
-  "/rentcar.png",
-  "/rentcar.png",
-];
+const images = ["/van18.jpg", "/van4.jpg", "/vanlx.webp", "/van1.png"];
 function Slider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [currentImageUrl, setCurrentImageUrl] = useState(images[0]);
@@ -56,7 +50,7 @@ function Slider() {
               key={index}
               index={index}
               activeIndex={activeIndex}
-              handleClick={handleControlClick}
+              handleClick={() => setActiveIndex(index)}
             />
           ))}
         </div>
