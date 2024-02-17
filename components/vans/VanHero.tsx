@@ -1,8 +1,16 @@
+"use client";
+
 import React from "react";
 import CustomButton from "../rent-a-car/CustomButton";
-import Image from "next/image";
-import Slider from "../Slider/Slider";
+
 const VanHero = () => {
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: 900,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="2xl:mx-44 xl:mx-32 md:mx-16">
       <div className="flex flex-col flex-1 pt-10 p-6 items-center justify-center">
@@ -22,7 +30,7 @@ const VanHero = () => {
         <CustomButton
           title="Explore Vans"
           containerStyles="px-6 py-4 bg-blue-600 text-white rounded-full mt-10"
-          // handleClick={handleScroll}
+          handleClick={scrollToBottom}
         />
       </div>
 

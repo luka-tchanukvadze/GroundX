@@ -5,7 +5,14 @@ import Image from "next/image";
 import CustomButton from "./CustomButton";
 
 const Hero = () => {
-  const handleScroll = () => {};
+  // const handleScroll = () => {};
+
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: 800,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div>
@@ -22,7 +29,7 @@ const Hero = () => {
         <CustomButton
           title="Explore Cars"
           containerStyles="px-6 py-4 bg-blue-600 text-white rounded-full mt-10"
-          handleClick={handleScroll}
+          handleClick={scrollToBottom}
         />
       </div>
 

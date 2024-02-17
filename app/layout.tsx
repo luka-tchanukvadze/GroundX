@@ -21,7 +21,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={outfit.className}>
+        <body
+          className={`${outfit.className} dark:bg-slate-900 dark:text-white`}
+        >
           <NavBar />
           {children}
           <div className="mt-36">
