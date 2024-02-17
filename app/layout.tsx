@@ -22,7 +22,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${outfit.className} dark:bg-slate-900 dark:text-white`}
+          className={`${outfit.className} dark:bg-gradient-to-b from-gray-900 via-gray-900 to-black dark:text-white`}
         >
           <NavBar />
           {children}

@@ -40,6 +40,13 @@ function NavBar() {
         <Link href="/rent-car">rent a car</Link>
       )}
 
+      <Link
+        href="/project-info
+      "
+      >
+        info
+      </Link>
+
       <Button
         className={`flex items-center justify-center  bg-gray-400 p-2 rounded-full hover:rotate-[360deg] transition-all delay-100 ease-in-out`}
         onClick={switchMode}

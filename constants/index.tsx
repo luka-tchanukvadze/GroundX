@@ -75,28 +75,23 @@ export const footerLinks = [
   {
     title: "About",
     links: [
-      { title: "How it works", url: "/" },
-      { title: "Featured", url: "/" },
-      { title: "Partnership", url: "/" },
-      { title: "Bussiness Relation", url: "/" },
+      { title: "How it works", url: "/project-info" },
+      { title: "Featured", url: "/project-info" },
+      { title: "Partnership", url: "/project-info" },
+      { title: "Bussiness Relation", url: "/project-info" },
     ],
   },
   {
     title: "Company",
     links: [
-      { title: "Events", url: "/" },
-      { title: "Blog", url: "/" },
-      { title: "Podcast", url: "/" },
-      { title: "Invite a friend", url: "/" },
+      { title: "Events", url: "/project-info" },
+      { title: "Blog", url: "/project-info" },
+      { title: "Podcast", url: "/project-info" },
+      { title: "Invite a friend", url: "/project-info" },
     ],
   },
   {
     title: "Socials",
-    links: [
-      { title: "Discord", url: "/" },
-      { title: "Instagram", url: "/" },
-      { title: "Twitter", url: "/" },
-      { title: "Facebook", url: "/" },
-    ],
+    links: [{ title: "LinkedIn", url: "/" }],
   },
 ];
