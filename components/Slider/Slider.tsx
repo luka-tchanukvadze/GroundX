@@ -54,8 +54,8 @@ function Slider() {
             />
           ))}
         </div>
+        <Text>Some Text Here</Text>
       </div>
-      <Text>Some Text Here</Text>
     </SliderContainer>
   );
 }
@@ -64,21 +64,21 @@ export default Slider;
 
 const SliderContainer = styled.div`
   position: relative;
+  /* width: "40rem";
+  height: "30rem"; */
 `;
 
 const Text = styled.div`
-  display: none;
-
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
   @media screen and (min-width: 800px) {
-    display: block;
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    color: #fff;
     font-size: 20px;
-    font-weight: 400;
-    line-height: 2rem;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
   }
 
   @media screen and (min-width: 1300px) {

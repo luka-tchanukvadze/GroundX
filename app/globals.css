@@ -58,14 +58,19 @@
 
 
 .slider-container {
-
-  display: none;
+  border: 2px solid lightgray;
+  border-radius: 29px;
   position: relative;
-  /* max-width: 800px; */
-  /* width: 100%; */
-  /* height: 100%; */
+  max-width: 50rem;
+  height: 25rem;
   margin: 0 auto;
   overflow: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  .slider-container {
+    height: 15rem;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -81,19 +86,12 @@
 
 .slider-item {
   flex: 0 0 100%;
-  /* width: 10rem; */
-  height: 50rem;
-  /* width: 100%; */
   object-fit: cover;
   
   overflow: hidden;
   border-radius: 30px;
 }
 
-.slider-item img {
-  width: 100%;
-  height: 100%;
-}
 
 .slider-controls {
   position: absolute;

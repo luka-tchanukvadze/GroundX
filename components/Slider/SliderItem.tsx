@@ -8,12 +8,14 @@ interface SliderItemProps {
 }
 function SliderItem({ imageUrl, isActive }: SliderItemProps) {
   return (
-    <div className={`slider-item ${isActive ? "active" : ""}`}>
+    <div className={`slider-item ${isActive ? "active" : ""} m-0 p-0`}>
       <Image
-        className="m-2 object-bottom object-cover"
+        className="m-0 object-bottom object-cover"
         src={imageUrl}
-        width={5000}
-        height={5000}
+        // width={5000}
+        // height={5000}
+        fill
+        priority
         alt="Slider Item"
       />
     </div>
