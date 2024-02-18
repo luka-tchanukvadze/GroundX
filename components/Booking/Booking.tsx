@@ -3,6 +3,7 @@ import AutocompleteAddress from "./AutocompleteAddress";
 import Cars from "./Cars";
 import Cards from "./Cards";
 import { MapboxMap } from "react-map-gl";
+import Link from "next/link";
 
 function Booking() {
   // const screenHeight = window.innerHeight
@@ -15,7 +16,7 @@ function Booking() {
         <Cars />
         <Cards />
         <button className="w-full bg-yellow-400 p-1 rounded-md mt-4">
-          Book
+          <Link href="/billing">Book</Link>
         </button>
       </div>
     </div>

@@ -17,9 +17,9 @@ function page() {
       <div>
         <h2>About</h2>
         <p>
-          Welcome to our taxi project! This platform is a reflection of my
-          skills and passion, allowing users to seamlessly book taxis, rent
-          cars, and vans for their transportation needs.
+          Welcome to my taxi project! This platform is a reflection of my skills
+          and passion, allowing users to seamlessly book taxis, rent cars, and
+          vans for their transportation needs.
         </p>
         <p>
           It's important to note that my taxi search feature is currently
@@ -27,7 +27,6 @@ function page() {
         </p>
       </div>
 
-      {/* How it works */}
       <div>
         <h3>How it Works</h3>
         <p>Discovering the convenience of my platform is easy:</p>
