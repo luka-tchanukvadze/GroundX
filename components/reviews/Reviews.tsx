@@ -12,7 +12,7 @@ import {
   where,
 } from "firebase/firestore";
 
-function displayDate(firebaseDate) {
+function displayDate(firebaseDate: any) {
   if (!firebaseDate || !firebaseDate.toDate || !firebaseDate.toDate()) {
     return "Date processing";
   }
@@ -69,7 +69,7 @@ async function addDataToFirestore(text: string): Promise<boolean> {
 // }
 async function fetchReviewsFromFirestore(): Promise<any[]> {
   const querySnapshot = await getDocs(collection(db, "reviews"));
-  const reviews = [];
+  const reviews: any = [];
 
   querySnapshot.forEach((doc) => {
     const reviewData = doc.data();
@@ -81,7 +81,9 @@ async function fetchReviewsFromFirestore(): Promise<any[]> {
   });
 
   // Sort the reviews by formattedDate in descending order
-  reviews.sort((a, b) => b.formattedDate.localeCompare(a.formattedDate));
+  reviews.sort((a: any, b: any) =>
+    b.formattedDate.localeCompare(a.formattedDate)
+  );
 
   return reviews;
 }

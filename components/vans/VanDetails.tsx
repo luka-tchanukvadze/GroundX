@@ -10,7 +10,7 @@ import VansList from "@/data/VansList";
 interface VanDetailsProps {
   vanIsOpen: boolean;
   closeModal: () => void;
-  van: VansProps | undefined;
+  van: VansProps;
 }
 
 const VanDetails = ({ vanIsOpen, closeModal, van }: VanDetailsProps) => {
@@ -59,7 +59,7 @@ const VanDetails = ({ vanIsOpen, closeModal, van }: VanDetailsProps) => {
                   <div className="flex-1 flex flex-col gap-3">
                     <div className="relative w-full h-40 bg-cover bg-blue-800 dark:bg-gray-700 bg-center rounded-lg mb-4">
                       <Image
-                        src={van?.imageUrl}
+                        src={van.imageUrl}
                         alt="car model"
                         fill
                         priority

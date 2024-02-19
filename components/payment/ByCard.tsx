@@ -16,7 +16,7 @@ function ByCard() {
     resolver: yupResolver(paymentSchema),
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     // console.log("submitted", data);
     alert("thank you");
     router.push("/");
