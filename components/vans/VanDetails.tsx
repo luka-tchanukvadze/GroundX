@@ -10,7 +10,7 @@ import VansList from "@/data/VansList";
 interface VanDetailsProps {
   vanIsOpen: boolean;
   closeModal: () => void;
-  van: VansProps;
+  van: any;
 }
 
 const VanDetails = ({ vanIsOpen, closeModal, van }: VanDetailsProps) => {
