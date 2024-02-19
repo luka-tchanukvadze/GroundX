@@ -97,11 +97,9 @@ const Vans = () => {
         ) : null}
       </div>
       <div className=" grid  xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14 ">
-        {/* <div className=" grid  xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14 "> */}
         {displayVans?.map((van) => (
           <div
-            // className="relative flex p-4 bg-blue-200  hover:bg-white hover:shadow-md rounded-3xl group"
-            className="relative flex flex-col  p-6  content-center justify-center items-center text-black-100 bg-blue-100 hover:bg-white hover:shadow-md rounded-3xl group "
+            className="relative flex flex-col  p-6  content-center justify-center items-center text-black-100 bg-blue-100 dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-white hover:shadow-md rounded-3xl group "
             key={van.id}
           >
             <div className="flex flex-col justify-center ">
@@ -127,7 +125,7 @@ const Vans = () => {
                   // priority
                   width={5000}
                   height={5000}
-                  className="w-[300px] h-[300px] object-cover"
+                  className="rounded-2xl mt-4 w-[300px] h-[300px] object-cover"
                 />
               </div>
 

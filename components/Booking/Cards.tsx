@@ -11,7 +11,8 @@ function Cards() {
     <div>
       <h2>Payment Methodes</h2>
 
-      <div className="grid grid-cols-5 m-2 ">
+      {/* <div className="grid grid-cols-5 m-2 "> */}
+      <div className="flex  gap-4 justify-center">
         {CardsList.map((item, index) => (
           <div
             key={index}

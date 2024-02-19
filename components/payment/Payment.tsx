@@ -8,18 +8,24 @@ import Image from "next/image";
 function Payment() {
   const [selected, setSelected] = useState<boolean>(true);
 
-  const handleClick = () => {
-    setSelected((prev) => !prev);
-  };
-
   return (
-    <div className="flex flex-col justify-center items-center sm:w-1/3 bg-blue-700 mt-8 p-4 w-full mx-6">
-      <div className="flex gap-2 justify-center mb-8">
-        <div onClick={handleClick} className="flex flex-col border-2 px-3 py-2">
+    <div className="flex flex-col justify-center items-center p-12 shadow-2xl mt-24   mx-6">
+      <div className="flex gap-10 justify-center mb-8">
+        <div
+          onClick={() => setSelected(true)}
+          className={`flex flex-col border-2 px-6 py-3 rounded-md ${
+            selected ? "border-blue-200 dark:border-blue-800" : ""
+          }`}
+        >
           <Image src="/card.png" width={25} height={25} alt="card" />
           <p>By Card</p>
         </div>
-        <div onClick={handleClick} className="flex flex-col border-2 px-3 py-2">
+        <div
+          onClick={() => setSelected(false)}
+          className={`flex flex-col border-2 px-6 py-3 rounded-md ${
+            !selected ? "border-blue-200 dark:border-blue-800" : ""
+          }`}
+        >
           <Image src="/cash.png" width={25} height={25} alt="cash" />
           <p>By Cash</p>
         </div>

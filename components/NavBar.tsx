@@ -44,7 +44,7 @@ function NavBar() {
         href="/project-info
       "
       >
-        info
+        About
       </Link>
 
       <Button
@@ -66,15 +66,11 @@ function NavBar() {
 
       {path === "/" && (
         <div className="hidden md:flex gap-2">
-          <h2 className="hover:bg-gray-100 p-2 cursor-pointer transition-all">
-            Home
-          </h2>
-          <h2 className="hover:bg-gray-100 p-2 cursor-pointer transition-all">
-            History
-          </h2>
-          <h2 className="hover:bg-gray-100 p-2 cursor-pointer transition-all">
-            Help
-          </h2>
+          <Link href="/">
+            <h2 className="hover:bg-gray-100 p-2 cursor-pointer transition-all">
+              Home
+            </h2>
+          </Link>
         </div>
       )}
     </div>

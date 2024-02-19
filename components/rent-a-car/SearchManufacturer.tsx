@@ -38,7 +38,7 @@ const SearchManufacturer = ({
           </Combobox.Button>
 
           <Combobox.Input
-            className="border-2 w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm"
+            className="border-2 w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white dark:bg-gray-800 outline-none cursor-pointer text-sm"
             placeholder="Volkswagen..."
             displayValue={(item: string) => item}
             // displayValue={(manufacturer: string) => manufacturer}
@@ -58,7 +58,9 @@ const SearchManufacturer = ({
                   key={item}
                   className={({ active }) => `
                   relative  cursor-default select-none py-2 pl-10 pr-4 ${
-                    active ? "bg-blue-600 text-white" : "text-gray-900"
+                    active
+                      ? "bg-blue-600 text-white"
+                      : "text-gray-900 dark:bg-gray-800 dark:text-white"
                   }
                   }
                   `}

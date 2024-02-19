@@ -29,7 +29,7 @@ async function RentCar({ searchParams }: HomeProps) {
     >
       <Hero />
 
-      <div className="w-[80%] ">
+      <div className="w-[80%] my-16">
         <Slider />
       </div>
 
@@ -51,7 +51,6 @@ async function RentCar({ searchParams }: HomeProps) {
         {!isDataEmpty ? (
           <section>
             <div className=" grid  xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14 ">
-              {/* <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14"> */}
               {allCars?.map((car) => (
                 <CarCard car={car} />
               ))}

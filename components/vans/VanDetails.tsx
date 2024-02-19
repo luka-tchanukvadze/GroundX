@@ -41,7 +41,7 @@ const VanDetails = ({ vanIsOpen, closeModal, van }: VanDetailsProps) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5">
+                <Dialog.Panel className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white dark:bg-gray-800 p-6 text-left shadow-xl transition-all flex flex-col gap-5">
                   <button
                     className="absolute top-2 right-2 z-10 w-fit p-2 bg-white rounded-full"
                     type="button"
@@ -57,24 +57,32 @@ const VanDetails = ({ vanIsOpen, closeModal, van }: VanDetailsProps) => {
                   </button>
 
                   <div className="flex-1 flex flex-col gap-3">
-                    <div className="relative w-full h-40 bg-cover bg-blue-800 bg-center rounded-lg">
+                    <div className="relative w-full h-40 bg-cover bg-blue-800 dark:bg-gray-700 bg-center rounded-lg mb-4">
                       <Image
                         src={van?.imageUrl}
                         alt="car model"
                         fill
                         priority
-                        className="object-contain"
+                        className="rounded-md object-contain"
                       />
                     </div>
                   </div>
 
                   <div className="flex-1 flex flex-col gap-2">
-                    <h2 className="font-semibold text-xl">{van?.name}</h2>
+                    <h2 className=" text-xl">
+                      <strong>Name:</strong> {van?.name}
+                    </h2>
 
                     <div className="mt-3 flex flex-col flex-wrap gap-4 ">
-                      <h4>{van?.type}</h4>
-                      <h4>{van?.price}</h4>
-                      <h4>{van?.description}</h4>
+                      <h4>
+                        <strong>Type:</strong> {van?.type}
+                      </h4>
+                      <h4>
+                        <strong>Price:</strong> {van?.price}
+                      </h4>
+                      <h4>
+                        <strong>Description:</strong> {van?.description}
+                      </h4>
                       <h4>hehe</h4>
                     </div>
                   </div>

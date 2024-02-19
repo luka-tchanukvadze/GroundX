@@ -7,7 +7,7 @@ const VansPage = () => {
   return (
     <main className="m-6 flex flex-col items-center">
       <VanHero />
-      <div className="w-[80%] ">
+      <div className="w-[80%] my-16">
         <Slider />
       </div>
       <Vans />

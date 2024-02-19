@@ -7,7 +7,10 @@ import { useRouter } from "next/navigation";
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => {
   return (
-    <button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
+    <button
+      type="submit"
+      className={`-ml-3 z-10 ${otherClasses} sm:translate-y-1`}
+    >
       <Image
         src="/magnifying-glass.svg"
         alt="magnifying glass"
@@ -59,7 +62,7 @@ const SearchBar = () => {
 
   return (
     <form
-      className="flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl"
+      className="flex items-start justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl"
       onSubmit={handleSearch}
     >
       <div className="flex-1 max-sm:w-full flex justify-start items-center relative">
@@ -84,7 +87,7 @@ const SearchBar = () => {
           value={model}
           onChange={(e) => setModel(e.target.value)}
           placeholder="Tiguan"
-          className="w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm border-2"
+          className="dark:bg-gray-800 w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm border-2"
         />
         <SearchButton otherClasses="sm:hidden" />
       </div>
