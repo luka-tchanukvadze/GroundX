@@ -12,7 +12,7 @@ import {
   where,
 } from "firebase/firestore";
 
-function displayDate(firebaseDate) {
+function displayDate(firebaseDate:<any>) {
   if (!firebaseDate || !firebaseDate.toDate || !firebaseDate.toDate()) {
     return "Date processing";
   }
