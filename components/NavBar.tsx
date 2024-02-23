@@ -29,42 +29,54 @@ function NavBar() {
   console.log("path", path);
   return (
     <div className="flex justify-around py-6 items-center border-b-2">
-      <Link href="/">
-        <p>LOGO</p>
-      </Link>
+      <div className="flex items-center justify-center gap-4">
+        <Link href="/">
+          <p>LOGO</p>
+        </Link>
 
-      {path.startsWith("/rent-car") && (
+        {/* {path.startsWith("/rent-car") && (
+          <Link href="/special-offer">Home </Link>
+        )} */}
+        {path.startsWith("/rent-car") ? null : (
+          <Link href="/rent-car">Rent car</Link>
+        )}
+
+        {/* <Link href="/rent-car">Rent car</Link> */}
+      </div>
+      {/* {path.startsWith("/rent-car") && (
         <Link href="/special-offer">Special Offer</Link>
       )}
       {path.startsWith("/rent-car") ? null : (
-        <Link href="/rent-car">rent a car</Link>
-      )}
+        <Link href="/rent-car">Rent car</Link>
+      )} */}
 
-      <Link
-        href="/project-info
-      "
-      >
-        About
-      </Link>
-
-      <Button
-        className={`flex items-center justify-center  bg-gray-400 p-2 rounded-full hover:rotate-[360deg] transition-all delay-100 ease-in-out`}
-        onClick={switchMode}
-      >
-        {/* <Button
+      <div className="flex justify-center items-center gap-4">
+        <Button
+          className={`flex items-center justify-center bg-gray-500 p-1 rounded-full hover:rotate-[360deg] transition-all delay-100 ease-in-out`}
+          onClick={switchMode}
+        >
+          {/* <Button
         className={`flex items-center justify-center  bg-blue-900 p-2 rounded-full hover:rotate-[180] `}
         onClick={switchMode}
       > */}
-        {darkMode ? (
-          <img src={"./sun.svg"} alt="sun" width={25} height={25} />
-        ) : (
-          <img src={"./moon.svg"} alt="moon" width={25} height={25} />
-        )}{" "}
-      </Button>
+          {darkMode ? (
+            <img src={"./sun.svg"} alt="sun" width={25} height={25} />
+          ) : (
+            <img src={"./moon.svg"} alt="moon" width={25} height={25} />
+          )}{" "}
+        </Button>
 
-      <UserButton afterSignOutUrl="/" />
+        <Link
+          href="/project-info
+      "
+        >
+          About
+        </Link>
 
-      {path === "/" && (
+        <UserButton afterSignOutUrl="/" />
+      </div>
+
+      {/* {path === "/" && (
         <div className="hidden md:flex gap-2">
           <Link href="/">
             <h2 className="hover:bg-gray-100 p-2 cursor-pointer transition-all">
@@ -72,7 +84,7 @@ function NavBar() {
             </h2>
           </Link>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

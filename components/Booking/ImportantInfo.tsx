@@ -9,7 +9,8 @@ function ImportantInfo() {
       {!importentInfo && (
         <button
           onClick={() => setImportentInfo(true)}
-          className="w-full my-4 border-2 py-2 bg-blue-700 rounded-xl border-none text-white font-bold"
+          className="w-full py-3 bg-red-600 text-white rounded-full my-4"
+          // className="w-full my-4 border-2 py-2 bg-blue-700 rounded-xl border-none text-white font-bold"
         >
           Important Information
         </button>

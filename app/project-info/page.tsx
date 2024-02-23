@@ -13,7 +13,7 @@ function page() {
   // };
 
   return (
-    <div className="flex flex-col gap-6 mx-8">
+    <div className="flex flex-col gap-6 2xl:mx-44 xl:mx-32 md:mx-16">
       <main className="mt-16">
         {/* About section */}
         <section className="p-2 rounded-md bg-gray-100 mb-12 dark:bg-gray-800">
@@ -93,12 +93,16 @@ function page() {
           </ul>
         </section>
       </main>
-      <div className="p-2 rounded-md bg-gray-100 dark:bg-gray-800">
-        <p>My LinkedIn Profile: </p>
+      <div className=" p-2 rounded-md bg-gray-100 dark:bg-gray-800">
+        <p className="dark:text-gray-400 mb-4">My LinkedIn Profile: </p>
 
         {/* <button onClick={openLinkedInProfile}>Visit my LinkedIn</button> */}
-        <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
-          Visit my LinkedIn profile
+        <a
+          className="dark:text-gray-300 hover:underline"
+          href={linkedInUrl}
+          target="_blank"
+        >
+          Luka Tchanukvadze
         </a>
 
         {/* <button onClick={redirectToLinkedInProfile}>

@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import SliderControl from "./SliderControl";
 import SliderItem from "./SliderItem";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // import SliderItem from "./SliderItem";
 // import SliderControl from "./SliderControl";
@@ -31,6 +33,8 @@ function Slider() {
     setActiveIndex(index);
   };
 
+  const path = usePathname().toString();
+
   return (
     <SliderContainer>
       <div className="slider-container">
@@ -54,7 +58,19 @@ function Slider() {
             />
           ))}
         </div>
-        <Text>Some Text Here</Text>
+        <Link href="special-offer">
+          <Text
+            className={`${
+              path.startsWith("/special-offer")
+                ? ""
+                : "animate-bounce py-2 px-4 backdrop-blur-3xl rounded-full"
+            } `}
+          >
+            {path.startsWith("/special-offer")
+              ? "Find Your Van"
+              : "Special Offer"}
+          </Text>
+        </Link>
       </div>
     </SliderContainer>
   );
@@ -77,6 +93,7 @@ const Text = styled.div`
   font-weight: 400;
   line-height: 2rem;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+
   @media screen and (min-width: 800px) {
     font-size: 20px;
   }
