@@ -18,7 +18,7 @@ function Cars() {
     ).toFixed(2);
   };
   return (
-    <div className="mt-3">
+    <div className="mt-8">
       <h2 className="font-semibold"> Select Car</h2>
       <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3  ">
         {CarsList.map((item, index) => (

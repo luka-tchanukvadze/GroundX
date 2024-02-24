@@ -18,10 +18,10 @@ function Booking() {
         <AutocompleteAddress />
         <Cars />
         <Cards />
-        <button className="w-full py-3 bg-yellow-400 text-white rounded-full mt-10">
+        <button className="w-full py-3 bg-yellow-400 text-white rounded-full mt-8">
           <Link href="/billing">Book</Link>
         </button>
-        <button className="w-full py-3 bg-blue-600 text-white rounded-full mt-10">
+        <button className="w-full py-3 bg-blue-600 text-white rounded-full mt-8">
           <Link href="/reviews">Leave a Review</Link>
         </button>
       </div>

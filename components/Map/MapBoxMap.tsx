@@ -93,7 +93,7 @@ function MapBoxMap() {
               latitude: userLocation?.lat,
               zoom: 14,
             }}
-            style={{ width: "100%", height: 550 }}
+            style={{ width: "100%", height: 700 }}
             mapStyle="mapbox://styles/mapbox/streets-v9"
           >
             <Markers />

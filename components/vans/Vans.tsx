@@ -68,24 +68,25 @@ const Vans = () => {
     <div className="mt-32 2xl:mx-44 xl:mx-32 md:mx-16">
       <div className="flex gap-2 justify-center">
         <button
-          className={`py-2 px-4 text-white ${
-            typeFilter == "simple" ? "bg-blue-800 " : "bg-cyan-400 "
+          // px-6 py-4 bg-blue-600 text-white rounded-full mt-10
+          className={`px-6 py-4 text-white rounded-full  ${
+            typeFilter == "simple" ? "bg-purple-900 " : "bg-blue-600 "
           }`}
           onClick={() => updateSearchParams("simple")}
         >
           simple
         </button>
         <button
-          className={`py-2 px-4  text-white ${
-            typeFilter == "rugged" ? "bg-blue-800 " : "bg-cyan-400 "
+          className={`px-6 py-4 text-white rounded-full  ${
+            typeFilter == "rugged" ? "bg-purple-900 " : "bg-blue-600 "
           }`}
           onClick={() => updateSearchParams("rugged")}
         >
           rugged
         </button>
         <button
-          className={`py-2 px-4 text-white ${
-            typeFilter == "luxury" ? "bg-blue-800 " : "bg-cyan-400 "
+          className={`px-6 py-4 text-white rounded-full  ${
+            typeFilter == "luxury" ? "bg-purple-900 " : "bg-blue-600 "
           }`}
           onClick={() => updateSearchParams("luxury")}
         >
@@ -93,7 +94,12 @@ const Vans = () => {
         </button>
 
         {typeFilter ? (
-          <button onClick={() => updateSearchParams(".")}>Clear filter</button>
+          <button
+            className="hover:underline"
+            onClick={() => updateSearchParams(".")}
+          >
+            Clear filter
+          </button>
         ) : null}
       </div>
       <div className=" grid  xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14 ">

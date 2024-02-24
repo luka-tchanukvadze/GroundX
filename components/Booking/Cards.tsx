@@ -8,7 +8,7 @@ function Cards() {
   const [activeIndex, setActiveIndex] = useState<any>();
 
   return (
-    <div>
+    <div className="mt-8">
       <h2>Payment Methodes</h2>
 
       {/* <div className="grid grid-cols-5 m-2 "> */}

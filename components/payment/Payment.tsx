@@ -9,7 +9,7 @@ function Payment() {
   const [selected, setSelected] = useState<boolean>(true);
 
   return (
-    <div className="flex flex-col justify-center items-center p-12 shadow-2xl mt-24   mx-6">
+    <div className="flex flex-col justify-center items-center p-12 shadow-2xl mt-24  mx-6">
       <div className="flex gap-10 justify-center mb-8">
         <div
           onClick={() => setSelected(true)}

@@ -88,13 +88,13 @@ function AutocompleteAddress() {
   return (
     <div className="">
       <div className="relative">
-        <label className="text-gray-400 text-[13px] dark:text-gray-400">
+        {/* <label className="text-gray-400 text-[13px] dark:text-gray-400">
           Where From?
-        </label>
+        </label> */}
         <input
           type="text"
-          placeholder="Type here"
-          className={`bg-white p-1 border-[1px] w-full rounded-md outline-none focus:border-yellow-300 text-[14px]  dark:bg-gray-800 dark:text-gray-300
+          placeholder="Choose start location"
+          className={`dark:text-black w-full dark:bg-gray-300 dark:border-gray-800 dark:placeholder-gray-700 dark:focus:border-blue-800 text-xl p-2 border-2 rounded-lg outline-none focus:border-blue-100 mb-2 
           }`}
           value={source}
           onChange={(e) => {
@@ -124,14 +124,14 @@ function AutocompleteAddress() {
         ) : null}
       </div>
       <div className="relative">
-        <label className="text-gray-400 text-[13px] dark:text-gray-400">
+        {/* <label className="text-gray-400 text-[13px] dark:text-gray-400">
           Where To?
-        </label>
+        </label> */}
         <input
           type="text"
-          placeholder="Type here"
-          className={`bg-white p-1 border-[1px] w-full rounded-md outline-none focus:border-yellow-300 text-[14px]  dark:bg-gray-800 dark:text-gray-300
-        }`}
+          placeholder="Choose destination"
+          className={`dark:text-black w-full dark:bg-gray-300 dark:border-gray-800 dark:placeholder-gray-700 dark:focus:border-blue-800 text-xl p-2 border-2 rounded-lg outline-none focus:border-blue-100 
+          }`}
           value={destination}
           onChange={(e) => {
             setDistination(e.target.value);

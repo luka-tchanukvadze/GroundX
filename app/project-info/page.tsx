@@ -13,7 +13,7 @@ function page() {
   // };
 
   return (
-    <div className="flex flex-col gap-6 2xl:mx-44 xl:mx-32 md:mx-16">
+    <div className="flex flex-col gap-6 2xl:mx-44 xl:mx-32 md:mx-16 mx-8">
       <main className="mt-16">
         {/* About section */}
         <section className="p-2 rounded-md bg-gray-100 mb-12 dark:bg-gray-800">

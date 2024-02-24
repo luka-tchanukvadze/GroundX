@@ -3,20 +3,20 @@ import React from "react";
 import { useState } from "react";
 
 function ImportantInfo() {
-  const [importentInfo, setImportentInfo] = useState<boolean>(false);
+  const [importentInfo, setImportentInfo] = useState<boolean>(true);
   return (
     <div>
       {!importentInfo && (
         <button
           onClick={() => setImportentInfo(true)}
-          className="w-full py-3 bg-red-600 text-white rounded-full my-4"
+          className="w-full py-3 bg-red-600 text-white rounded-full mb-8 mt-2"
           // className="w-full my-4 border-2 py-2 bg-blue-700 rounded-xl border-none text-white font-bold"
         >
           Important Information
         </button>
       )}
       {importentInfo && (
-        <div className="bg-white dark:bg-gray-800 dark:text-blue-200 p-4 rounded-md my-4 ">
+        <div className="bg-white dark:bg-gray-800 dark:text-blue-200 p-4 rounded-md mt- mb-8 ">
           <p className="text-red-600 mb-2">
             **Important Notice:**
             <br />
