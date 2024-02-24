@@ -98,7 +98,7 @@ function page() {
 
         {/* <button onClick={openLinkedInProfile}>Visit my LinkedIn</button> */}
         <a
-          className="dark:text-gray-300 hover:underline"
+          className="dark:text-gray-300 hover:underline hover:cursor-pointer"
           href={linkedInUrl}
           target="_blank"
         >

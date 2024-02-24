@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import VansList from "@/data/VansList";
+import Link from "next/link";
 
 interface VanDetailsProps {
   vanIsOpen: boolean;
@@ -83,7 +84,18 @@ const VanDetails = ({ vanIsOpen, closeModal, van }: VanDetailsProps) => {
                       <h4>
                         <strong>Description:</strong> {van?.description}
                       </h4>
-                      <h4>hehe</h4>
+                      <Link
+                        onClick={() =>
+                          alert(
+                            `Great news! Your car has been successfully reserved. Please make sure to pick up your car within the next 3 hours, otherwise, the reservation will be automatically canceled. Safe travels! \n\nDestionation: Visättra Backe 71, 141 58 Huddinge Municipality, Sweden`
+                          )
+                        }
+                        href="/"
+                        className=" w-full text-center py-[16px]
+          rounded-full bg-blue-600 text-white text-[14px] leading-[17px]"
+                      >
+                        Book The Van
+                      </Link>
                     </div>
                   </div>
                 </Dialog.Panel>
