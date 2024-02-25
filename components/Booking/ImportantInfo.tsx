@@ -33,7 +33,7 @@ function ImportantInfo() {
           </ul>
           <button
             onClick={() => setImportentInfo(false)}
-            className="w-full my-4 border-2 py-2 bg-red-500 text-white font-bold rounded-xl border-none"
+            className="w-full my-4 border-2 py-2 bg-red-600 rounded-full text-white font-bold border-none"
           >
             Hide
           </button>

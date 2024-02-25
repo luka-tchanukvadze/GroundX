@@ -129,7 +129,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       className=" w-full text-center py-[16px]
           rounded-full bg-blue-600 text-white text-[14px] leading-[17px]"
                     >
-                      Book The Van
+                      Book The Car
                     </Link>
                   </div>
                 </Dialog.Panel>

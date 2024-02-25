@@ -63,7 +63,7 @@ function Slider() {
             className={`${
               path.startsWith("/special-offer")
                 ? ""
-                : "animate-bounce py-2 px-4 backdrop-blur-3xl rounded-full"
+                : "animate-bounce py-2 px-4 backdrop-blur-md rounded-full"
             } `}
           >
             {path.startsWith("/special-offer")

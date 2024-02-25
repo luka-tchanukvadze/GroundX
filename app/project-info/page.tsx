@@ -99,7 +99,7 @@ function page() {
         {/* <button onClick={openLinkedInProfile}>Visit my LinkedIn</button> */}
         <a
           className="dark:text-gray-300 hover:underline hover:cursor-pointer"
-          href={linkedInUrl}
+          href="https://www.linkedin.com/in/luka-tchanukvadze-600211257"
           target="_blank"
         >
           Luka Tchanukvadze
