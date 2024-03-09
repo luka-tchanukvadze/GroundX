@@ -139,7 +139,7 @@ function MapBoxRoute(props: any) {
           paint={{ "line-color": "#0462d4", "line-width": 2 }}
         />
       </Source> */}
-      <div>naxui</div>
+      <div>Direction Line Con</div>
     </>
   );
 }

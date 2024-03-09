@@ -108,7 +108,7 @@ function MapBoxMap() {
           coordinates={directionData?.routes[0]?.geometry?.coordinates}
         />
       ) : (
-        <div>aeeee</div>
+        <div></div>
       )}
       <div className="absolute bottom-6 z-20 right-20 hidden md:block">
         <DistanceTime />
