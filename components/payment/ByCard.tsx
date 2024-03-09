@@ -111,7 +111,7 @@ function ByCard() {
         )}
       </div>
 
-      <button type="submit" className="py-2 px-4 mt-10 border-2 rounded-md">
+      <button type="submit" className=" py-2 px-4 mt-10 border-2 rounded-full">
         Confirm
       </button>
     </form>

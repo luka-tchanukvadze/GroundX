@@ -14,7 +14,7 @@ function ByCash() {
             icon: "success",
           })
         }
-        className="py-2 px-4 border-2"
+        className="py-2 px-4 border-2 rounded-full"
         href="/"
       >
         Confirm
