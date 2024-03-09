@@ -4,6 +4,7 @@ import SearchManufacturer from "./SearchManufacturer";
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => {
   return (
@@ -32,7 +33,11 @@ const SearchBar = () => {
     e.preventDefault();
 
     if (manufacturer.trim() === "" && model.trim() === "") {
-      return alert("Please fill in the search bar");
+      return Swal.fire({
+        title: "Error",
+        text: "Please fill in the search bar",
+        icon: "error",
+      });
     }
 
     updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());

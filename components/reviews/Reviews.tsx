@@ -11,6 +11,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
+import Swal from "sweetalert2";
 
 function displayDate(firebaseDate: any) {
   if (!firebaseDate || !firebaseDate.toDate || !firebaseDate.toDate()) {
@@ -107,7 +108,11 @@ function Reviews() {
 
     try {
       if (text.trim() === "") {
-        alert("Please fill the form");
+        Swal.fire({
+          title: "Error",
+          text: "Please fill the form",
+          icon: "error",
+        });
         return;
       }
 

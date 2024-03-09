@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import paymentSchema from "../schema/paymentSchema";
 import { useRouter } from "next/navigation";
 import { CostContext } from "@/context/CostContext";
+import Swal from "sweetalert2";
 
 function ByCard() {
   const { price, setPrice } = useContext(CostContext);
@@ -19,8 +20,11 @@ function ByCard() {
   });
 
   const onSubmit = () => {
-    // console.log("submitted", data);
-    alert("thank you");
+    Swal.fire({
+      title: "Thank you!",
+      text: "Feel free to leave a review",
+      icon: "success",
+    });
     router.push("/");
   };
   // const handleCardNumberChange = (event) => {

@@ -7,6 +7,7 @@ import { Fragment } from "react";
 import { generateCarImageUrl } from "@/utils";
 import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
+import Swal from "sweetalert2";
 
 interface CarDetailsProps {
   isOpen: boolean;
@@ -121,9 +122,13 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     </div>
                     <Link
                       onClick={() =>
-                        alert(
-                          `Great news! Your car has been successfully reserved. Please make sure to pick up your car within the next 3 hours, otherwise, the reservation will be automatically canceled. Safe travels! \n\nDestionation: Visättra Backe 71, 141 58 Huddinge Municipality, Sweden`
-                        )
+                        Swal.fire({
+                          title: "Great news!",
+                          text: `Your car has been successfully reserved. Please make sure to pick up your car within the next 3 hours, otherwise, the reservation will be automatically canceled. Safe travels!`,
+                          footer:
+                            " Destionation: Visättra Backe 71, 141 58 Huddinge Municipality, Sweden",
+                          icon: "success",
+                        })
                       }
                       href="/"
                       className=" w-full text-center py-[16px]
