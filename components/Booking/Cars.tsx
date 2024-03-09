@@ -5,10 +5,19 @@ import React, { useState, useContext } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { DirectionDataContext } from "@/context/DirectionDataContext";
+import { CostContext } from "@/context/CostContext";
+import Link from "next/link";
 
 function Cars() {
   const [selectedCAr, setSelectedCar] = useState<any>();
   const { directionData, setDirectionData } = useContext(DirectionDataContext);
+
+  const { price, setPrice } = useContext(CostContext);
+  console.log(price);
+
+  const getPrice = (num: any) => {
+    setPrice(getCost(num));
+  };
 
   const getCost = (charges: any) => {
     return (
@@ -20,14 +29,15 @@ function Cars() {
   return (
     <div className="mt-8">
       <h2 className="font-semibold"> Select Car</h2>
-      <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3  ">
+      {/* <div className="grid grid-cols-3  md:grid-cols-3  "> */}
+      <div className="grid align-center justify-center grid-cols-3 md:grid-cols-2 lg:grid-cols-3  ">
         {CarsList.map((item, index) => (
           <div
             key={index}
             className={`m-2 p-2 border-2 rounded-md hover:border-cyan-100 ${
               index === selectedCAr ? "border-4 border-cyan-100" : null
             }`}
-            onClick={() => setSelectedCar(index)}
+            onClick={() => (setSelectedCar(index), getPrice(item.charges))}
           >
             <Image
               src={item.image}
@@ -46,6 +56,11 @@ function Cars() {
           </div>
         ))}
       </div>
+      <Link href="/billing">
+        <button className="w-full py-3 bg-yellow-400 text-white rounded-full mt-8">
+          Book For {price && `${price}$`}
+        </button>
+      </Link>
     </div>
   );
 }

@@ -158,7 +158,7 @@ function Reviews() {
         <button
           type="submit"
           disabled={loading}
-          className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-blue-200 dark:bg-blue-400 dark:hover:bg-blue-500 dark:focus:ring-blue-300"
+          className=" bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-blue-200 dark:bg-blue-400 dark:hover:bg-blue-500 dark:focus:ring-blue-300"
         >
           {loading ? "Posting..." : "Post Review"}
         </button>

@@ -29,11 +29,11 @@ async function RentCar({ searchParams }: HomeProps) {
     >
       <Hero />
 
-      <div className="w-[80%] my-16">
+      <div className="w-[80%] my-12">
         <Slider />
       </div>
 
-      <div className="mt-12 px-10 py-10" id="discover">
+      <div className="mt-12 px-10 pt-0  pb-10" id="discover">
         <div className="flex flex-col items-start justify-start gap-y-2.5 text-black-100">
           <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
           <p>Explore out cars you might like</p>

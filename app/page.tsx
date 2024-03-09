@@ -6,9 +6,11 @@ import { DesinationCordiContext } from "@/context/DesinationCordiContext";
 import { SourceCordiContext } from "@/context/SourceCordiContet";
 import { UserLocationContext } from "@/context/UserLocationContext";
 import { DirectionDataContext } from "@/context/DirectionDataContext";
+import { CostContext } from "@/context/CostContext";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import ScrollToTop from "@/components/ScrollToTop";
+import Payment from "@/components/payment/Payment";
 
 // Visättravägen 71, 141 50 Huddinge Municipality, Sweden
 // Visättra Backe 71, 141 58 Huddinge Municipality, Sweden
@@ -30,6 +32,7 @@ export default function Home() {
   const [sorceCordinates, setSourceCordinates] = useState<any>([]);
   const [destinationCordinates, setDestinationCordinates] = useState<any>([]);
   const [directionData, setDirectionData] = useState<any>([]);
+  const [price, setPrice] = useState<string | null>(null);
 
   useEffect(() => {
     getUserLocation();
@@ -56,15 +59,20 @@ export default function Home() {
             <DirectionDataContext.Provider
               value={{ directionData, setDirectionData }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="">
-                  <Booking />
-                </div>
+              <CostContext.Provider value={{ price, setPrice }}>
+                <div className="grid grid-cols-1 md:grid-cols-3">
+                  {/* <div className="flex flex-col justify-center items-center"> */}
+                  <div className="">
+                    {/* <div className="w-full sm:w-2/3 md:w-1/2 2xl:w-1/4"> */}
+                    <Booking />
+                  </div>
 
-                <div className="col-span-2">
-                  <MapBoxMap />
+                  <div className=" col-span-2">
+                    {/* <div className="w-full sm:w-2/3 xl:w-1/2"> */}
+                    <MapBoxMap />
+                  </div>
                 </div>
-              </div>
+              </CostContext.Provider>
             </DirectionDataContext.Provider>
           </DesinationCordiContext.Provider>
         </SourceCordiContext.Provider>

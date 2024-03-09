@@ -65,7 +65,7 @@ const Vans = () => {
   console.log(typeFilter);
 
   return (
-    <div className="mt-32 2xl:mx-44 xl:mx-32 md:mx-16">
+    <div className="mt- 2xl:mx-44 xl:mx-32 md:mx-16">
       <div className="flex gap-2 justify-center">
         <button
           // px-6 py-4 bg-blue-600 text-white rounded-full mt-10

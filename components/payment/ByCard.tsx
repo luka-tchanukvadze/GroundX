@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import paymentSchema from "../schema/paymentSchema";
 import { useRouter } from "next/navigation";
+import { CostContext } from "@/context/CostContext";
 
 function ByCard() {
+  const { price, setPrice } = useContext(CostContext);
   const router = useRouter();
   const {
     register,
@@ -106,7 +108,7 @@ function ByCard() {
       </div>
 
       <button type="submit" className="py-2 px-4 mt-10 border-2 rounded-md">
-        Pay
+        Confirm
       </button>
     </form>
   );

@@ -81,8 +81,11 @@ function MapBoxMap() {
   console.log(directionData.routes);
 
   return (
-    <div className="p-5 relative">
-      <h2 className="text-[20px] font-semibold">Map</h2>
+    <div className="shadow-2xl p-5 relative">
+      <h2 className="flex justify-center text-[20px] font-semibold mb-7">
+        Map
+      </h2>
+      {/* <h2 className="text-[20px] font-semibold">Map</h2> */}
       <div className="rounded-lg overflow-hidden">
         {userLocation ? (
           <Map
@@ -93,7 +96,7 @@ function MapBoxMap() {
               latitude: userLocation?.lat,
               zoom: 14,
             }}
-            style={{ width: "100%", height: 700 }}
+            style={{ width: "100%", height: 610 }}
             mapStyle="mapbox://styles/mapbox/streets-v9"
           >
             <Markers />

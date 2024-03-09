@@ -7,7 +7,7 @@ const Footer = () => (
   <footer className="flex flex-col text-black-100  mt-5 border-t border-gray-100">
     <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-10 py-10">
       <div className="flex flex-col justify-start items-start gap-6">
-        <h1>Logo</h1>
+        <h1 className="text-violet-800 font-extrabold">GroundX</h1>
         <p className="text-base text-gray-700">
           GroundX 2024 <br />
           All Rights Reserved &copy;
