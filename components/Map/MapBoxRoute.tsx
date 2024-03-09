@@ -109,21 +109,31 @@ function MapBoxRoute(props: any) {
   // };
 
   // const allCoordinates = [17.946425, 59.215376];
-  // const geojson: FeatureCollection = {
-  //   type: "FeatureCollection",
-  //   features: [
-  //     {
-  //       type: "Feature",
-  //       geometry: { type: "Point", coordinates: allCoordinates },
-  //       properties: { id: 1, name: "raghaca" },
-  //     },
-  //   ],
-  // };
+
+  const geojson: FeatureCollection = {
+    type: "FeatureCollection",
+    features: [
+      {
+        type: "Feature",
+        geometry: {
+          type: "LineString",
+          coordinates: props.coordinates,
+          // coordinates: [
+          //   [17.946425, 59.215376],
+          //   [17.946552, 59.215363],
+          //   [17.946647, 59.215354],
+          // ],
+        },
+        properties: {},
+      },
+    ],
+  };
 
   return (
     <>
       {/* <Source id="my-data" type="geojson" data={geojson}>
         <Layer
+          id="LineString"
           type="line"
           layout={{ "line-join": "round", "line-cap": "square" }}
           paint={{ "line-color": "#0462d4", "line-width": 2 }}
