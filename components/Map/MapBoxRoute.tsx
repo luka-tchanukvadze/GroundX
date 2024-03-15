@@ -117,7 +117,7 @@ function MapBoxRoute(props: any) {
         type: "Feature",
         geometry: {
           type: "LineString",
-          coordinates: props.coordinates,
+          coordinates: fuckingCoordinates,
           // coordinates: [
           //   [17.946425, 59.215376],
           //   [17.946552, 59.215363],
@@ -131,15 +131,15 @@ function MapBoxRoute(props: any) {
 
   return (
     <>
-      {/* <Source id="my-data" type="geojson" data={geojson}>
+      <Source id="my-data" type="geojson" data={geojson}>
         <Layer
           id="LineString"
           type="line"
           layout={{ "line-join": "round", "line-cap": "square" }}
           paint={{ "line-color": "#0462d4", "line-width": 2 }}
         />
-      </Source> */}
-      <div>Direction Line Con</div>
+      </Source>
+      {/* <div>Direction Line Con</div> */}
     </>
   );
 }
