@@ -46,14 +46,16 @@ function ImportantInfo() {
           </ul> */}
 
           <div className="flex justify-between content-center">
-            <p>1.</p>
-            <input
-              ref={textRef}
-              className="w-1/2"
-              type="text"
-              value="Visättravägen 71, 141 50 Huddinge Municipality, Sweden"
-              readOnly
-            />
+            <div className="flex content-center gap-2">
+              <p>1.</p>
+              <input
+                ref={textRef}
+                className="w-full truncate"
+                type="text"
+                value="Visättravägen 71, 141 50 Huddinge Municipality, Sweden"
+                readOnly
+              />
+            </div>
             <button
               className="px-2  border-2 text-blue-600 rounded-full  font-bold border-none"
               onClick={() => handleCopy(textRef)}
@@ -63,14 +65,16 @@ function ImportantInfo() {
           </div>
 
           <div className="flex justify-between content-center">
-            <p>2.</p>
-            <input
-              ref={textRef2}
-              className="w-1/2"
-              type="text"
-              value="Visättra Backe 71, 141 58 Huddinge Municipality, Sweden"
-              readOnly
-            />
+            <div className="flex content-center gap-2">
+              <p>2.</p>
+              <input
+                ref={textRef2}
+                className="w-full truncate"
+                type="text"
+                value="Visättra Backe 71, 141 58 Huddinge Municipality, Sweden"
+                readOnly
+              />
+            </div>
             <button
               className="px-2  border-2 text-blue-600 rounded-full  font-bold border-none"
               onClick={() => handleCopy(textRef2)}
