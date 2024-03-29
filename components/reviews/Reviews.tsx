@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { db } from "@/app/firebaseConfig";
+import moment from "moment";
 import {
   collection,
   addDoc,
@@ -27,7 +28,8 @@ function displayDate(firebaseDate: any) {
     second: "numeric",
     timeZoneName: "short",
   };
-  const formattedDate = firebaseDate.toLocaleString("en-US", options);
+  // const formattedDate = firebaseDate.toLocaleString("en-US", options);
+  const formattedDate = moment(Date.now()).format("MMMM Do YYYY, h:mm:ss a");
   return formattedDate;
 }
 
@@ -68,9 +70,10 @@ async function fetchReviewsFromFirestore(): Promise<any[]> {
   });
 
   // Sort the reviews by formattedDate in descending order
-  reviews.sort((a: any, b: any) =>
-    b.formattedDate.localeCompare(a.formattedDate)
-  );
+  // reviews.sort((a: any, b: any) =>
+  //   b.formattedDate.localeCompare(a.formattedDate)
+  // );
+  reviews.sort((a: any, b: any) => a.date - b.date);
 
   return reviews;
 }
