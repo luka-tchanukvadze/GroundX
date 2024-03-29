@@ -1,9 +1,22 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 
 function ImportantInfo() {
+  const textRef = useRef<any>(null);
+  const textRef2 = useRef<any>(null);
   const [importentInfo, setImportentInfo] = useState<boolean>(true);
+
+  const handleCopy = async (ref: any) => {
+    ref.current.select();
+
+    try {
+      await navigator.clipboard.writeText(ref.current.value);
+      console.log("Text copied to clipboard");
+    } catch (err) {
+      console.error("Unable to copy text to clipboard", err);
+    }
+  };
   return (
     <div>
       {!importentInfo && (
@@ -27,10 +40,44 @@ function ImportantInfo() {
             As a workaround, I suggest using the following example addresses for
             testing purposes:
           </p>
-          <ul className="list-decimal pl-4">
+          {/* <ul className="list-decimal pl-4">
             <li>Visättravägen 71, 141 50 Huddinge Municipality, Sweden</li>
             <li>Visättra Backe 71, 141 58 Huddinge Municipality, Sweden</li>
-          </ul>
+          </ul> */}
+
+          <div className="flex justify-between content-center">
+            <p>1.</p>
+            <input
+              ref={textRef}
+              className="w-1/2"
+              type="text"
+              value="Visättravägen 71, 141 50 Huddinge Municipality, Sweden"
+              readOnly
+            />
+            <button
+              className="px-2  border-2 text-blue-600 rounded-full  font-bold border-none"
+              onClick={() => handleCopy(textRef)}
+            >
+              Copy
+            </button>
+          </div>
+
+          <div className="flex justify-between content-center">
+            <p>2.</p>
+            <input
+              ref={textRef2}
+              className="w-1/2"
+              type="text"
+              value="Visättra Backe 71, 141 58 Huddinge Municipality, Sweden"
+              readOnly
+            />
+            <button
+              className="px-2  border-2 text-blue-600 rounded-full  font-bold border-none"
+              onClick={() => handleCopy(textRef2)}
+            >
+              Copy
+            </button>
+          </div>
           <button
             onClick={() => setImportentInfo(false)}
             className="w-full my-4 border-2 py-2 bg-red-600 rounded-full text-white font-bold border-none"
