@@ -23,7 +23,7 @@ function MapBoxMap() {
 
   const { sorceCordinates, setSourceCordinates } =
     useContext(SourceCordiContext);
-  const { destinationCordinates, setDestinationCordinates } = useContext(
+  const { destinationCordinates, setDestinationCordinaftes } = useContext(
     DesinationCordiContext
   );
 
@@ -82,34 +82,30 @@ function MapBoxMap() {
 
   return (
     <div className="shadow-2xl p-5 relative">
-      <h2 className="flex justify-center text-[20px] font-semibold mb-7">
+      <h2 className="flex justify-center text-[20px] font-semibold mb-5">
         Map
       </h2>
       {/* <h2 className="text-[20px] font-semibold">Map</h2> */}
       <div className="rounded-lg overflow-hidden">
         {userLocation ? (
-          <Map
-            ref={mapRef}
-            mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
-            initialViewState={{
-              longitude: userLocation?.lng,
-              latitude: userLocation?.lat,
-              zoom: 14,
-            }}
-            style={{ width: "100%", height: 610 }}
-            mapStyle="mapbox://styles/mapbox/streets-v9"
-          >
-            <Markers />
-          </Map>
+          // <Map
+          //   ref={mapRef}
+          //   mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
+          //   initialViewState={{
+          //     longitude: userLocation?.lng,
+          //     latitude: userLocation?.lat,
+          //     zoom: 14,
+          //   }}
+          //   style={{ width: "100%", height: 610 }}
+          //   mapStyle="mapbox://styles/mapbox/streets-v9"
+          // >
+          //   <Markers />
+          // </Map>
+          <MapBoxRoute
+            coordinates={directionData?.routes?.[0]?.geometry?.coordinates}
+          />
         ) : null}
       </div>
-      {directionData?.routes ? (
-        <MapBoxRoute
-          coordinates={directionData?.routes[0]?.geometry?.coordinates}
-        />
-      ) : (
-        <div></div>
-      )}
       <div className="absolute bottom-6 z-20 right-20 hidden md:block">
         <DistanceTime />
       </div>

@@ -14,43 +14,28 @@ import {
 import Swal from "sweetalert2";
 
 function displayDate(firebaseDate: any) {
-  if (!firebaseDate || !firebaseDate.toDate || !firebaseDate.toDate()) {
+  console.log("firebaseDate", firebaseDate);
+  if (!firebaseDate) {
     return "Date processing";
   }
-
-  const date = firebaseDate.toDate();
-
-  const day = date.getDate();
-  const year = date.getFullYear();
-
-  const monthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const month = monthNames[date.getMonth()];
-
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  hours = hours < 10 ? "0" + hours : hours;
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-
-  return `${day} ${month} ${year} - ${hours}:${minutes}`;
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    timeZoneName: "short",
+  };
+  const formattedDate = firebaseDate.toLocaleString("en-US", options);
+  return formattedDate;
 }
 
 async function addDataToFirestore(text: string): Promise<boolean> {
   try {
     const docRef = await addDoc(collection(db, "reviews"), {
       text: text,
+      date: Date.now(),
     });
     console.log("document written with id:", docRef.id);
     return true;
@@ -74,10 +59,11 @@ async function fetchReviewsFromFirestore(): Promise<any[]> {
 
   querySnapshot.forEach((doc) => {
     const reviewData = doc.data();
+    console.log("reviewData", reviewData);
     reviews.push({
       id: doc.id,
       ...reviewData,
-      formattedDate: displayDate(reviewData.timestamp), // Change 'timestamp' to the actual date field
+      formattedDate: displayDate(reviewData.date), // Change 'timestamp' to the actual date field
     });
   });
 
@@ -163,7 +149,7 @@ function Reviews() {
         <button
           type="submit"
           disabled={loading}
-          className=" bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-blue-200 dark:bg-blue-400 dark:hover:bg-blue-500 dark:focus:ring-blue-300"
+          className=" bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-500  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-blue-200 dark:bg-blue-600 dark:hover:bg-blue-500 dark:focus:ring-blue-300"
         >
           {loading ? "Posting..." : "Post Review"}
         </button>
