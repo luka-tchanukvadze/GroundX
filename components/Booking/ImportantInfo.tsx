@@ -7,23 +7,21 @@ function ImportantInfo() {
   const textRef2 = useRef<any>(null);
   const [importentInfo, setImportentInfo] = useState<boolean>(true);
 
-  const handleCopy = async (ref: any) => {
-    ref.current.select();
-
+  const handleCopy = async (text: string) => {
     try {
-      await navigator.clipboard.writeText(ref.current.value);
+      await navigator.clipboard.writeText(text);
       console.log("Text copied to clipboard");
     } catch (err) {
       console.error("Unable to copy text to clipboard", err);
     }
   };
+
   return (
     <div>
       {!importentInfo && (
         <button
           onClick={() => setImportentInfo(true)}
           className="w-full py-3 bg-red-600 text-white rounded-full mb-8 mt-2"
-          // className="w-full my-4 border-2 py-2 bg-blue-700 rounded-xl border-none text-white font-bold"
         >
           Important Information
         </button>
@@ -40,44 +38,40 @@ function ImportantInfo() {
             As a workaround, I suggest using the following example addresses for
             testing purposes:
           </p>
-          {/* <ul className="list-decimal pl-4">
-            <li>Visättravägen 71, 141 50 Huddinge Municipality, Sweden</li>
-            <li>Visättra Backe 71, 141 58 Huddinge Municipality, Sweden</li>
-          </ul> */}
 
           <div className="flex justify-between content-center">
-            <div className="flex content-center gap-2">
+            <div className="w-1/2 flex content-center gap-2">
               <p>1.</p>
-              <input
-                ref={textRef}
-                className="w-full truncate"
-                type="text"
-                value="Visättravägen 71, 141 50 Huddinge Municipality, Sweden"
-                readOnly
-              />
+              <span className="truncate">
+                Visättravägen 71, 141 50 Huddinge Municipality, Sweden
+              </span>
             </div>
             <button
               className="px-2  border-2 text-blue-600 rounded-full  font-bold border-none"
-              onClick={() => handleCopy(textRef)}
+              onClick={() =>
+                handleCopy(
+                  "Visättravägen 71, 141 50 Huddinge Municipality, Sweden"
+                )
+              }
             >
               Copy
             </button>
           </div>
 
           <div className="flex justify-between content-center">
-            <div className="flex content-center gap-2">
+            <div className="w-1/2 flex content-center gap-2">
               <p>2.</p>
-              <input
-                ref={textRef2}
-                className="w-full truncate"
-                type="text"
-                value="Visättra Backe 71, 141 58 Huddinge Municipality, Sweden"
-                readOnly
-              />
+              <span className="truncate">
+                Visättra Backe 71, 141 58 Huddinge Municipality, Sweden
+              </span>
             </div>
             <button
               className="px-2  border-2 text-blue-600 rounded-full  font-bold border-none"
-              onClick={() => handleCopy(textRef2)}
+              onClick={() =>
+                handleCopy(
+                  "Visättra Backe 71, 141 58 Huddinge Municipality, Sweden"
+                )
+              }
             >
               Copy
             </button>
