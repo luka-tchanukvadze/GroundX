@@ -92,6 +92,6 @@ export const footerLinks = [
   },
   {
     title: "Socials",
-    links: [{ title: "LinkedIn", url: "/" }],
+    links: [{ title: "LinkedIn", url: "/project-info" }],
   },
 ];

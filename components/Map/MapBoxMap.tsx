@@ -106,7 +106,7 @@ function MapBoxMap() {
           />
         ) : null}
       </div>
-      <div className="absolute bottom-6 z-20 right-20 hidden md:block">
+      <div className="absolute bottom-5 z-20 right-5 hidden md:block">
         <DistanceTime />
       </div>
     </div>

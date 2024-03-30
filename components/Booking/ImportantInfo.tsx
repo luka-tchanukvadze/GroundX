@@ -47,7 +47,7 @@ function ImportantInfo() {
               </span>
             </div>
             <button
-              className="px-2  border-2 text-blue-600 rounded-full  font-bold border-none"
+              className="px-2  border-2 text-blue-600 rounded-full  font-bold border-none active:text-blue-400"
               onClick={() =>
                 handleCopy(
                   "Visättravägen 71, 141 50 Huddinge Municipality, Sweden"
@@ -66,7 +66,7 @@ function ImportantInfo() {
               </span>
             </div>
             <button
-              className="px-2  border-2 text-blue-600 rounded-full  font-bold border-none"
+              className="px-2  border-2 text-blue-600 rounded-full  font-bold border-none active:text-blue-400"
               onClick={() =>
                 handleCopy(
                   "Visättra Backe 71, 141 58 Huddinge Municipality, Sweden"
