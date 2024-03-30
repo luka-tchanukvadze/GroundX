@@ -29,7 +29,7 @@ function displayDate(firebaseDate: any) {
     timeZoneName: "short",
   };
   // const formattedDate = firebaseDate.toLocaleString("en-US", options);
-  const formattedDate = moment(Date.now()).format("MMMM Do YYYY, h:mm:ss a");
+  const formattedDate = moment(firebaseDate).format("MMMM Do YYYY, h:mm:ss a");
   return formattedDate;
 }
 
