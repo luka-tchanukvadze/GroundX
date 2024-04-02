@@ -17,4 +17,4 @@ The live version is coming soon.
 > Tailwind CSS
 
 ># **VENI VIDI VCI**
->tricky APIs
+>tricky APIs of MapBox, React-map-gl and RapidAPI - Cars by API-Ninjas
