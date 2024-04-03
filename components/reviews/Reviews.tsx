@@ -169,12 +169,12 @@ function Reviews() {
               <p className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">
                 {review.text}
               </p>
-              <span
+              {/* <span
                 className="text-red-500 cursor-pointer hover:underline dark:text-red-400"
                 onClick={() => handleDeleteReview(review.id)}
               >
                 Delete Review
-              </span>
+              </span> */}
             </div>
           ))}
         </div>
