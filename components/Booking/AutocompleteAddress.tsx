@@ -137,6 +137,7 @@ function AutocompleteAddress() {
             setDistination(e.target.value);
             setDestinationChange(true);
           }}
+          disabled={!source}
         />
 
         {addressList?.suggestions && destinationChange ? (
